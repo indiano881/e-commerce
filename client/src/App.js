@@ -1,10 +1,10 @@
-
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
-    <div>
-      
-    </div>
+    <ChakraProvider>
+      <h1>frontend</h1>
+    </ChakraProvider>
   );
 }
 
