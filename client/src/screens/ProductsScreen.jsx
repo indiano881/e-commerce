@@ -1,11 +1,35 @@
-import { Box } from "@chakra-ui/react"
+import { Box, Wrap } from "@chakra-ui/react"
 import ProductCard from "../components/ProductCard";
+import axios from "axios"
+import { useEffect, useState } from "react";
+
 
 const ProductsScreen = () => {
+
+    const [data, setData]=useState([])
+
+    useEffect(()=> {
+        axios.get("api/products").then((response)=> {
+            setData(response.data.products)
+        }).catch(error=> {
+            console.error(`error fetching:`, error)
+        })
+    },[])
+
+
+
+
     return (
-        <Box>
-            <ProductCard product={{name: "smartphone"}} loading={false} />
-        </Box>
+        <> {data.length > 1 && (
+            <Box>
+                <Wrap spacing="30px" justify="center" minHeight="80vh" mx={{base: "12", md: "20", lg: "32"}} >
+                <ProductCard product={data[0]} loading={false} />
+                </Wrap>
+            </Box>
+
+        )}
+            
+        </>
     )
 };
 
