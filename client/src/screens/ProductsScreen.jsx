@@ -21,7 +21,7 @@ const ProductsScreen = () => {
 
     useEffect(()=> {
         dispatch(getProducts())
-    },[])
+    },[dispatch])
 
 
 
@@ -31,9 +31,9 @@ const ProductsScreen = () => {
                 <Wrap spacing="30px" justify="center" minHeight="80vh" mx={{base: "12", md: "20", lg: "32"}} >
                 
                 {products.map((item, index) =>(
-                    <WrapItem key={item.id}>
+                    <WrapItem key={item._id}>
                         <Center w={"250px"} h={"450px"}>
-                            <ProductCard product={item} loading={false} />
+                            <ProductCard product={item} loading={loading} />
                         </Center>
                     </WrapItem>
 
