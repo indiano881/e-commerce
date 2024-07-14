@@ -20,7 +20,7 @@ const ProductsScreen = () => {
     const {loading, error, products, pagination} = useSelector((state) => state.product)
 
     useEffect(()=> {
-        dispatch(getProducts())
+        dispatch(getProducts(3))
     },[dispatch])
 
 
