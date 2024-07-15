@@ -44,7 +44,7 @@ const ProductCard = ({product, loading}) => {
               </Text>
             </Flex>
             <Flex justify={"space-between"} mt="2">
-                      {favorites.includes(product._id) ? (
+                      {favorites.includes(product.id) ? (
                         <IconButton 
                         icon={<MdOutlineFavorite size={"20px"} />} onClick={()=>dispatch(removeFromFavorites(product._id))}
                         colorScheme="cyan"
@@ -52,7 +52,7 @@ const ProductCard = ({product, loading}) => {
                         />
                           ) : (
                         <IconButton 
-                        icon={<MdOutlineFavorite size={"20px"} />} onClick={()=>dispatch(removeFromFavorites(product._id))}
+                        icon={<MdOutlineFavorite size={"20px"} />} onClick={()=>dispatch(addToFavorites(product._id))}
                         colorScheme="cyan"
                         size= "sm"
                         />

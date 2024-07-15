@@ -13,12 +13,15 @@ const Header = () => {
         <>
           {favoritesToggled ? (
             <IconButton 
-            icon={<MdOutlineFavorite size={"20px"} onClick={()=>dispatch(toggleFavorites(false))}/>} 
+            onClick={()=>dispatch(toggleFavorites(false))}
+            icon={<MdOutlineFavorite size={"20px"} />} 
             variant="ghost"
             />
           ) : (
-          <IconButton icon={<MdOutlineFavoriteBorder size={"20px"} onClick={()=>dispatch(toggleFavorites(true))}/>} 
-          variant="ghost"/>)
+            <IconButton 
+            onClick={()=>dispatch(toggleFavorites(true))}
+            icon={<MdOutlineFavoriteBorder size={"20px"} />} 
+            variant="ghost"/>)
 
           }
         </>
